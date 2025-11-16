@@ -7,7 +7,7 @@
 <div class="row">
 
     <div class="col-5">
-        <form action="{% url 'main:create_post_view' %}" method="post">
+        <form action="{% url 'main:create_post_view' %}" method="post" enctype="multipart/form-data">
 
             {% csrf_token %}
             <input type="text" placeholder="Title" name="title" />
@@ -21,8 +21,9 @@
 
             <input type="datetime-local" name="published_at">
 
-            <input type="submit" value="Create Post">
+            <input type="file" name="cover">
 
+            <input type="submit" value="Create Post">
 
         </form>
     </div>
